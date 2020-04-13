@@ -26,9 +26,17 @@ View(emp)
 select(group_by(emp,job)) %>% count()
 
 # [문제6] 월급이 1000 이상이고 3000이하인 사원들의 이름, 월급, 부서번호를 출력한다.
+emp %>% filter(sal>=1000 & sal<=3000) %>% select(ename,sal,deptno)
+
 # [문제7] emp 에서 업무이 ANALYST 가 아닌 사원들의 이름, 직업, 월급을 출력한다.
+emp %>% filter(job != "ANALYST") %>% select(ename, job, sal)
+
 # [문제8] emp 에서 업무가 SALESMAN 이거나 ANALYST 인 사원들의 이름, 직업을 출력한다.
+emp %>% filter(job =="SALESMAN"|job=="ANALYST") %>% select(ename, job)
+
 # [문제9] 부서별 직원들 월급의 합을 출력한다.
+# select(group_by(emp,deptno)) %>% sum(sal)
+
 # [문제10] 월급이 적은 순으로 모든 직원 정보를 출력한다.
 # [문제11] 월급이 제일 많은 직원의 정보를 출력한다.
 # [문제12] 직원들의 월급을 보관하고 있는 컬럼의 컬럼명을 sal에서 salary 로 변경하고
