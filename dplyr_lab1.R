@@ -19,8 +19,12 @@ emp %>% select(empno,ename,sal)
 emp %>% select(!empno)
 
 # [문제4] emp 에서 ename 과 sal컬럼만 출력한다.
+emp %>% select(ename, sal)
 
 # [문제5] 업무별 직원수를 출력한다.
+View(emp)
+select(group_by(emp,job)) %>% count()
+
 # [문제6] 월급이 1000 이상이고 3000이하인 사원들의 이름, 월급, 부서번호를 출력한다.
 # [문제7] emp 에서 업무이 ANALYST 가 아닌 사원들의 이름, 직업, 월급을 출력한다.
 # [문제8] emp 에서 업무가 SALESMAN 이거나 ANALYST 인 사원들의 이름, 직업을 출력한다.
